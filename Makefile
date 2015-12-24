@@ -5,6 +5,8 @@ LDFLAGS		=
 
 all: Sort
 
+#  $^ name of all prerequisites with duplicates removed
+
 Sort: Sorting.o
 	$(CC) -o $(PROGNAME) $^ $(LDFLAGS)
 

@@ -52,6 +52,10 @@ int main(int argc, char **argv)
 	ifstream infile(input_file.c_str());
 	ofstream outfile(output_file.c_str());
 
+	// Let us just copy the file to start off with
+	string line;
+	while (getline(infile, line))
+		outfile << line << "\n";
 
 	return 0;
 }
