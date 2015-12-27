@@ -4,7 +4,8 @@ using namespace std;
 #include <getopt.h>
 #include <cstdlib>	// required for 'exit'
 #include <string>	// string objects
-#include <fstream>	// required for ifstream / ofstream
+
+#include "Sorting.h"
 
 string progname;
 
@@ -47,15 +48,12 @@ int main(int argc, char **argv)
 	cout << "Input File to sort: " << input_file << endl;
 	cout << "Output File to store the sorted result: " << output_file << endl;
 
-	// Constructor of ifstream expects a const char * and not a string
-	// object.  Hence the conversion
-	ifstream infile(input_file.c_str());
-	ofstream outfile(output_file.c_str());
+	Sorting* sort_file = new Sorting(input_file, output_file);
 
 	// Let us just copy the file to start off with
-	string line;
-	while (getline(infile, line))
-		outfile << line << "\n";
+	unsigned long num_lines = sort_file->copy();
+
+	cout << "Number of lines copied: " << num_lines << endl;
 
 	return 0;
 }

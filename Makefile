@@ -10,8 +10,8 @@ all: Sort
 Sort: Sorting.o
 	$(CC) -o $(PROGNAME) $^ $(LDFLAGS)
 
-Sorting.o: Sorting.cpp
-	$(CC) -c $^ $(CFLAGS)
+Sorting.o: Sorting.cpp Sorting.h
+	$(CC) -c Sorting.cpp $(CFLAGS)
 
 clean:
 	rm -vf *.o Sort
