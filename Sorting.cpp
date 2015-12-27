@@ -48,6 +48,9 @@ int main(int argc, char **argv)
 	cout << "Input File to sort: " << input_file << endl;
 	cout << "Output File to store the sorted result: " << output_file << endl;
 
+	// Another way to create the object would be:
+	// Sorting sort_file(input_file, output_file);
+	// 	in this case, we will call the copy_file as sort_file.copy_file()
 	Sorting* sort_file = new Sorting(input_file, output_file);
 
 	// Let us just copy the file to start off with
